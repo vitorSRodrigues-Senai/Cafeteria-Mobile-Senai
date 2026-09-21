@@ -4,6 +4,7 @@ import { Image, KeyboardAvoidingView, ScrollView, StyleSheet, Text, TextInput, T
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CoffeCard from './components/CoffeCard';
+import CustomButton from './components/CustomButton';
 
 export default function App() {
   const [name, setName] = useState('');
@@ -80,10 +81,8 @@ export default function App() {
               onChangeText={setName}
               ></TextInput>
 
+              <CustomButton title='fazer meu pedido' onPress={handleOrder}/>
 
-              <TouchableOpacity style={styles.button} onPress={handleOrder}>
-                <Text style={styles.buttonText}>Fazer me pedido</Text>
-              </TouchableOpacity>
               {message !== '' && (
                 <Text style={styles.messageText}>{message}</Text>
               )}
@@ -250,4 +249,4 @@ const styles = StyleSheet.create({
     marginTop: 20,
   }
 
-})
+})    
